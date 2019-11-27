@@ -1,8 +1,8 @@
 rm(list=ls())
-where<-"/home/nicolas/Nicolas/rprojects"
+where<-"/home/nicolas/Rprojects/barraquer"
 setwd(where)
 
-name_of_newproject<-"test_proj"
+name_of_newproject<-"eye_bank"
 dir.create(name_of_newproject)
 
 setwd(paste0("./",name_of_newproject))
@@ -70,3 +70,6 @@ if(!\"../data/Rdata\" %in% list.dirs(path=\"..\")){
 save(z0,choix,file=paste0(\"../data/Rdata\",\"/\",\"MO_ER.RData\"))
 setwd(oldir)"
 writeLines(load_from_raw, paste0(where,"/",name_of_newproject,"/","/R/Load_from_raw.R"))
+
+readm <- "Proyecto in charge of Rodrigo Barrera, Banco de ojos"
+writeLines(readm, paste0(where,"/",name_of_newproject,"/","/README.txt"))
