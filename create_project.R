@@ -1,8 +1,8 @@
 rm(list=ls())
-where<-"/home/pc76618/Nicolas/Rprojects"
+where<-"/home/nicolas/Rprojects"
 setwd(where)
 
-name_of_newproject<-"stratify"
+name_of_newproject<-"test"
 dir.create(name_of_newproject)
 
 setwd(paste0("./",name_of_newproject))
@@ -73,3 +73,34 @@ writeLines(load_from_raw, paste0(where,"/",name_of_newproject,"/","/R/Load_from_
 
 readm <- "Proyecto in charge of xxxx"
 writeLines(readm, paste0(where,"/",name_of_newproject,"/","/README.txt"))
+
+rproj<-"
+Version: 1.0
+
+RestoreWorkspace: Default
+SaveWorkspace: Default
+AlwaysSaveHistory: Default
+
+EnableCodeIndexing: Yes
+UseSpacesForTab: Yes
+NumSpacesForTab: 2
+Encoding: UTF-8
+
+RnwWeave: Sweave
+LaTeX: pdfLaTeX
+"
+writeLines(rproj, paste0(where,"/",name_of_newproject,"/",name_of_newproject,".Rproj"))
+
+gitign<-"
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.xlsx
+*.xlsx#
+*.pdf
+*.ods
+*.xls
+"
+
+writeLines(gitign, paste0(where,"/",name_of_newproject,"/",".gitignore"))
